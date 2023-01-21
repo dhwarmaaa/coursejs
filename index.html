@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html style="font-size: 14px" lang="es">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+   
+    <title>Consulta de Nómina</title>
+    <link
+      rel="stylesheet"
+      href="//capp.nicepage.com/a21fecafd2132f518d14dad02d382c1b3e8867da/nicepage.css"
+      media="screen"
+    />
+    <link rel="stylesheet" href="style1.css" media="screen" />
+    <link rel="stylesheet" href="style.css" media="screen" />
+    <!--
+    <link rel="stylesheet" href="Mi-información.css" media="screen" />-->
+    <script
+      class="u-script"
+      type="text/javascript"
+      src="//capp.nicepage.com/assets/jquery-3.5.1.min.js"
+      defer=""
+    ></script>
+    <script
+      class="u-script"
+      type="text/javascript"
+      src="//capp.nicepage.com/a21fecafd2132f518d14dad02d382c1b3e8867da/nicepage.js"
+      defer=""
+    ></script>
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen&family=Rubik:wght@500&display=swap" rel="stylesheet">
+    
+    <!-- alert -->
+    <!-- JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"/>
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"/>
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"/>
+
+    <!-- 
+        RTL version
+    -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.rtl.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.rtl.min.css"/>
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.rtl.min.css"/>
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.rtl.min.css"/>
+
+  </head>
+  <body data-lang="es">
+    <div class="navbar pagination_div" id="navBar" style="opacity: 0">
+      <a href="#home" id="welcomeMessage">Bienvenido user</a>
+      <a href="#contact" id="exit">Salir</a>
+    </div>
+    <div class="login" id="login" style="opacity: 100">
+      <div class="modal">
+        <div class="loginForm">
+          <h1>Bienvenido</h1>
+          <form>
+            <label class="labelForm">user</label><br>
+            <input type="text" id="user" /><br>
+            <label class="labelForm">password</label><br>
+            <input type="text" id="pswd" />
+            <button id="submit" class="formButton">Log in</button>
+            <p id="salida"></p>
+            <label id="prueba"></label>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="main" id="main" style="opacity: 0">
+      <div class="u-tab-links-align-left u-tabs u-tabs-1">
+        <ul
+          class="u-border-2 u-border-palette-1-base u-spacing-10 u-tab-list u-unstyled"
+          role="tablist"
+        >
+          <li class="u-tab-item" role="presentation">
+            <a
+              class="active u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-1"
+              id="link-tab-0da5"
+              href="#tab-0da5"
+              role="tab"
+              aria-controls="tab-0da5"
+              aria-selected="true"
+              >Nómina</a
+            >
+          </li>
+          <li class="u-tab-item" role="presentation">
+            <a
+              class="u-active-palette-1-base u-button-style u-grey-10 u-tab-link u-text-active-white u-text-black u-tab-link-2"
+              id="link-tab-14b7"
+              href="#tab-14b7"
+              role="tab"
+              aria-controls="tab-14b7"
+              aria-selected="false"
+              >Mi información</a
+            >
+          </li>
+        </ul>
+        <div class="u-tab-content">
+          <div style="margin: 20px 30px;" class="u-container-style u-tab-active u-tab-pane u-white u-tab-pane-1" id="tab-0da5" role="tabpanel" aria-labelledby="link-tab-0da5">
+            <div class="u-container-layout u-container-layout-1">
+              <h4 class="u-text u-text-default u-text-2">Pagos realizados</h4>
+              <div class="u-form u-form-1">
+                <form
+                    action="https://forms.nicepagesrv.com/Form/Process"
+                    class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form"
+                    source="email"
+                    name="form"
+                    style="padding: 10px"
+                >
+                  <div class="u-form-group u-form-select u-form-group-1">
+                    <div class="u-form-select-wrapper">
+                      <select
+                        id="selectMonth"
+                        name="select"
+                        class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                      >
+                        <option value="Item 1">Mes</option>
+                      </select>
+                      <svg
+                          class="u-caret u-caret-svg"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          x="0px"
+                          y="0px"
+                          width="16px"
+                          height="16px"
+                          viewBox="0 0 16 16"
+                          style="fill: currentColor"
+                          xml:space="preserve"
+                      >
+                        <polygon
+                          class="st0"
+                          points="8,12 2,4 14,4 "
+                        ></polygon>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="u-form-group u-form-select u-form-group-2">
+                    <div class="u-form-select-wrapper">
+                      <select
+                          id="selectYear"
+                          name="select-1"
+                          class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"
+                      >
+                        <option value="Item 1">Año</option>
+                      </select>
+                      <svg
+                          class="u-caret u-caret-svg"
+                          version="1.1"
+                          id="Layer_1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          x="0px"
+                          y="0px"
+                          width="16px"
+                          height="16px"
+                          viewBox="0 0 16 16"
+                          style="fill: currentColor"
+                          xml:space="preserve"
+                        >
+                          <polygon
+                            class="st0"
+                            points="8,12 2,4 14,4 "
+                          ></polygon>
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                      class="u-align-left u-form-group u-form-submit"
+                      id="buttonSearch"
+                    >
+                      <a href="#" class="u-btn u-btn-submit u-button-style"
+                        >Buscar<br />
+                      </a>
+                  </div>
+                </form>
+              </div>
+              <div
+                  class="u-expanded-width-xl u-table u-table-responsive u-table-1"
+              >
+                <table class="u-table-entity">
+                    <colgroup>
+                      <col width="20%" />
+                      <col width="20%" />
+                      <col width="20%" />
+                      <col width="20%" />
+                      <col width="20%" />
+                    </colgroup>
+                    <thead class="head">
+                      <tr style="height: 51px">
+                        <td class="u-table-cell">Mes</td>
+                        <td class="u-table-cell">Fecha de pago</td>
+                        <td class="u-table-cell">Fin periodo</td>
+                        <td class="u-table-cell">Concepto</td>
+                        <td class="u-table-cell">Neto</td>
+                      </tr>
+                    </thead>
+                    <tbody class="u-table-alt-grey-5 u-table-body" id="tbody">
+                    </tbody>
+                  </table>
+                </div>
+                <div class="pagination_div">
+                
+                
+                <a
+                  class="u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-hover-palette-1-light-2 u-palette-1-base u-radius-2 u-btn-3"
+                  id="previous"
+                  >Anterior&nbsp;
+                </a>
+               
+                <a
+                  class="u-border-2 u-border-grey-75 u-btn u-btn-round u-button-style u-hover-palette-1-light-2 u-palette-1-base u-radius-2 u-btn-2"
+                  id="next"
+                  >Siguiente&nbsp;
+                </a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="u-align-left u-container-style u-tab-pane u-white u-tab-pane-2"
+              id="tab-14b7"
+              role="tabpanel"
+              aria-labelledby="link-tab-14b7"
+            >
+              <div class="u-container-layout u-container-layout-2">
+                <h4 class="u-text u-text-default u-text-3">Mi información</h4>
+                <div class="container_info">
+                  <div class="col1">
+                <img
+                  class="u-image u-image-circle u-image-1"
+                  src="https://assets.nicepagecdn.com/f659b7f4/3719227/images/g1bb8dc2947cab12cbdf902ad58fb8a72bf056eec8f439a9e1b94c57aac3459511c1e5733ac565c8355924069826bf90b_1280.png"
+                  alt=""
+                  width="180px"
+                  height="180px"
+                />
+              </div>
+              <div class="col2">
+                <div class="u-table u-table-responsive u-table-2">
+                  <table class="u-table-entity">
+                    <colgroup>
+                      <col width="35.2%" />
+                      <col width="64.8%" />
+                    </colgroup>
+                    <tbody class="u-table-alt-grey-5 u-table-body">
+                      <tr style="height: 43px">
+                        <td class="u-table-cell">Código</td>
+                        <td class="u-table-cell" id="code"></td>
+                      </tr>
+                      <tr style="height: 20px">
+                        <td class="u-table-cell">Nombre</td>
+                        <td class="u-table-cell" id="name"></td>
+                      </tr>
+                      <tr style="height: 20px">
+                        <td class="u-table-cell">Fecha de nacimiento</td>
+                        <td class="u-table-cell" id="birthday"></td>
+                      </tr>
+                      <tr style="height: 20px">
+                        <td class="u-table-cell">Fecha de ingreso</td>
+                        <td class="u-table-cell" id="startDate"></td>
+                      </tr>
+                      <tr style="height: 20px">
+                        <td class="u-table-cell">Antiguedad</td>
+                        <td class="u-table-cell" id="old"></td>
+                      </tr>
+                      <tr style="height: 20px">
+                        <td class="u-table-cell">Puesto</td>
+                        <td class="u-table-cell" id="position"></td>
+                      </tr>
+                      <tr style="height: 20px">
+                        <td class="u-table-cell">Vacaciones disponibles</td>
+                        <td class="u-table-cell" id="vacations"></td>
+                      </tr>
+                      <tr style="height: 20px">
+                        <td class="u-table-cell">Turno</td>
+                        <td class="u-table-cell" id="shift"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    <div class="modalData hidden" id="nomina">
+      <button class="close-modal">&times;</button>
+
+      <h2 class="u-text u-text-1">Nómina&nbsp;</h2>
+      <div class="u-table u-table-responsive u-table-1">
+        <table class="u-table-entity">
+          <colgroup>
+            <col width="25%" />
+            <col width="25%" />
+            <col width="25%" />
+            <col width="25%" />
+          </colgroup>
+         
+          <tbody class="u-table-body">
+            <tr style="height: 5px">
+              <td class="u-border-1 u-border-grey-dark-1 u-table-cell">
+                Nombre
+              </td>
+              <td class="u-border-1 u-border-grey-dark-1 u-table-cell">
+                RFC
+              </td>
+              <td class="u-border-1 u-border-grey-dark-1 u-table-cell">
+                CURP
+              </td>
+              <td class="u-border-1 u-border-grey-dark-1 u-table-cell">Periodo</td>
+            </tr>
+            <tr style="height: 5px">
+              <td class="u-border-1 u-border-grey-dark-1 u-table-cell" id="nameNomina">
+                Agustin Mendiola Zavala
+              </td>
+              <td class="u-border-1 u-border-grey-dark-1 u-table-cell" id="RFC">
+                ZDAS640715CMSHIHA6
+              </td>
+              <td
+                class="u-border-1 u-border-grey-dark-1 u-table-cell" id="CURP"
+              >
+              ZDAS640715CMSHIHA6
+              </td>
+              <td class="u-border-1 u-border-grey-dark-1 u-table-cell" id="period">03-Mar-2022 al 07-Abril-2022</td>
+            </tr>
+          </tbody>
+        </table>
+        <br><br>
+           <!-- tabla desglose -->
+           <table class="u-table-entity">
+            <colgroup>
+              <col width="17%" />
+              <col width="17%" />
+              <col width="17%" />
+              <col width="17%" />
+              <col width="17%" />
+              <col width="17%" />
+            </colgroup>
+           
+            <tbody class="u-table-body">
+            <tr style="height: 5px">
+              <td
+              colspan="2"
+                class="u-border-1 u-border-grey-dark-1 u-table-cell"
+              >
+                PERCEPCIONES
+              </td>
+              <td
+              colspan="2"
+                class="u-border-1 u-border-grey-dark-1 u-table-cell"
+              >
+                DEDUCCIONES
+              </td>
+              <td
+              colspan="2"
+                class="u-border-1 u-border-grey-dark-1 u-table-cell"
+              >
+                NETO RECIBIDO
+              </td>
+            </tr>
+            <tr style="height: 5px">
+              <td class="modalTableIzq">
+                <label>Sueldo normal</label><br>
+                <label>Festivos</label><br>
+                <label>Tiempo extra</label><br>
+                <label>Premio puntualidad</label><br>
+                <label>Premio asistencia</label><br>
+                <label>Despensa</label><br>
+              </td>
+              <td class="text"><label id="base">$ 456.89</label><br>
+                <label  id="holiday">$ 456.89</label><br>
+                <label  id="overtime">$ 456.89</label><br>
+                <label  id="punctuality">$ 456.89</label><br>
+                <label  id="attendance">$ 456.89</label><br>
+                <label  id="despensa">$ 456.89</label><br>
+                <br></td>
+              
+              <td class="modalTableIzq">
+                <label>Retencion ISR</label><br>
+                <label>IMSS</label><br>
+                <label>INFONAVIT</label><br>
+                <br>
+                <br>
+                <br>
+                <br>
+              </td>
+              <td class="text bordeInferior">
+                <label  id="ISR">$ 456.89</label><br>
+                <label  id="IMSS">$ 456.89</label><br>
+                <label  id="INFONAVIT">$ 456.89</label><br> 
+                <br>
+                <br>
+                <br>
+                <br></td>
+              <td class="modalTableIzq bordeInferior">
+                <label>Percepciones</label><br>
+                <label>Deducciones</label><br>
+                <label>Neto</label><br> 
+                <br>
+                <br>
+                <br>
+                <br>
+              </td>
+              <td class="text bordeInferior">
+                <label  id="total_percepciones">$ 456.89</label><br>
+                <label  id="total_deducciones"></label><br> 
+                <label  id="neto"></label><br>
+                <br>
+                <br>
+                <br>
+                <br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+   
+    
+    <footer>By Dharma Saucedo</footer>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
