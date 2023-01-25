@@ -261,7 +261,7 @@ on(document, 'click', '.botonModal', e => {
   // overlay.classList.remove('hidden');
   const closeModal = function () {
     modal.classList.add('hidden');
-    overlay.classList.add('hidden');
+    //overlay.classList.add('hidden');
   };
 
   btnCloseModal.addEventListener('click', closeModal);
